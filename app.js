@@ -98,7 +98,7 @@ const createOneMovie = (movieData) => {
         seatSelectorHeaderEl.classList.remove('v-none');
         fetchSeatAvailability(id)
     })
-    return movieContainerEl
+    return anc;
 }
 
 const showMovieList = () => {

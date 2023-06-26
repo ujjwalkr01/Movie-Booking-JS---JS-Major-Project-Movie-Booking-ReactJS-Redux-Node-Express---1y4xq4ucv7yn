@@ -67,8 +67,8 @@ h4{
 }
 .booking-grid{
     display: grid;
-    grid-template-columns: repeat(4, 75px);
-    grid-template-rows: repeat(3, 75px);
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: repeat(3, 75px); */
     gap: 10px;
 }
 #booker-grid-holder{
