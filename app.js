@@ -81,32 +81,21 @@ const createSeatElements = (availableSeats, nextSeats) => {
 
 const createOneMovie = (movieData) => {
     const {name, imgUrl} = movieData;
-    // // creating required elements
-    // const movieNameEl = createHtmlElandAddContent('p', name);
-    // const movieImageEl = createHtmlElandAddContent('img');
-    // const movieContainerEl = createHtmlElandAddContent('a');
-
-    // // adding properties
-    // movieImageEl.setAttribute('src', imgUrl);
-    // // movieImageEl.classList.add('image-container');
-    // // appending elements
-    // movieContainerEl.append(movieImageEl,movieNameEl);
-    // return movieContainerEl
-
-    
-    const movieEl = `<a class="movie-link">
+     let anc=document.createElement('a');
+     anc.setAttribute('class','movie-link');
+    const movieEl = `
     <div class="movie" data-id="${name}">
     <div class="movie-img-wrapper" style="background-image: url('${imgUrl}'); background-size: cover;">
     </div>
     <h4>${name}</h4>
-    </div>
-    </a>`
+    </div>`
 
-    const movieContainerEl = createHtmlElandAddContent('div');
-    movieContainerEl.innerHTML = movieEl
-    movieContainerEl.addEventListener('click', (e) => {
+    // const movieContainerEl = createHtmlElandAddContent('div');
+    anc.innerHTML = movieEl
+    anc.addEventListener('click', (e) => {
         // make an api call and get the data
-        const {id} = e.target.parentElement.dataset
+        const {id} = e.target.parentElement.dataset;
+        seatSelectorHeaderEl.classList.remove('v-none');
         fetchSeatAvailability(id)
     })
     return movieContainerEl
