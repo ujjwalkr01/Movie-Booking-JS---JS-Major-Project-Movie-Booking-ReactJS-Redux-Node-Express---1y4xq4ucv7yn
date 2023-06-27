@@ -68,7 +68,7 @@ h4{
 .booking-grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: repeat(3, 75px); */
+    grid-template-rows: repeat(3, 75px);
     gap: 10px;
 }
 #booker-grid-holder{
@@ -78,7 +78,7 @@ h4{
     justify-content: space-between;
 }
 .selected-seat{
-    outline: 4px solid blue;
+    border: 4px outset black;
 }
 #book-ticket-btn{
     padding: 10px 20px;
